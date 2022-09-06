@@ -78,37 +78,26 @@ class MyApp extends State<Home> {
                 }),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Expanded(
-                child: Container(
-                  color: Colors.red[700],
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
+            Container(
+              color: Colors.red[700],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  children: [
+                    Text(
                       'New set: $newSet',
                       style: const TextStyle(
                         color: Colors.white,
+                        fontSize: 20,
                       ),
                     ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Expanded(
-                child: Container(
-                  color: Colors.red[700],
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
+                    Text(
                       'EXPLANATION: $explanation',
                       style: const TextStyle(
                         color: Colors.white,
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ),
             ),
