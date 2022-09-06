@@ -52,123 +52,97 @@ class MyApp extends State<Home> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Expanded(
-                child: Column(
-                  children: [
-                    Container(
-                      alignment: FractionalOffset.center,
-                      child: Expanded(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  hintText: 'add set A (separated by ",")',
-                                ),
-                                onChanged: (text) => setState(() {
-                                  setA = text;
-                                }),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: TextField(
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  hintText: 'add Set B (separated by ",")',
-                                ),
-                                onChanged: (text) => setState(() {
-                                  setB = text;
-                                }),
-                              ),
-                            ),
-                          ],
-                        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'add set A (separated by ",")',
+                ),
+                onChanged: (text) => setState(() {
+                  setA = text;
+                }),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'add Set B (separated by ",")',
+                ),
+                onChanged: (text) => setState(() {
+                  setB = text;
+                }),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Expanded(
+                child: Container(
+                  color: Colors.red[700],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'New set: $newSet',
+                      style: const TextStyle(
+                        color: Colors.white,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Expanded(
-                        child: Container(
-                          color: Colors.deepPurple[400],
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'New set: $newSet',
-                              style: const TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Expanded(
-                        child: Container(
-                          color: Colors.deepPurple[400],
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              'EXPLANATION: $explanation',
-                              style: const TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 1,
-                  childAspectRatio: 5,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple[600],
-                        ),
-                        onPressed: unionHandler,
-                        child: const Text('GET UNION'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Expanded(
+                child: Container(
+                  color: Colors.red[700],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'EXPLANATION: $explanation',
+                      style: const TextStyle(
+                        color: Colors.white,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple[400],
-                        ),
-                        onPressed: intersectionHandler,
-                        child: const Text('GET INTERSECTION'),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple[300],
-                        ),
-                        onPressed: differenceHandler,
-                        child: const Text('GET DIFFERENCE'),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                ),
+                onPressed: unionHandler,
+                child: const Text('GET UNION'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                ),
+                onPressed: intersectionHandler,
+                child: const Text('GET INTERSECTION'),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                ),
+                onPressed: differenceHandler,
+                child: const Text('GET DIFFERENCE'),
+              ),
+            ),
+          ],
         ),
       ),
     );
